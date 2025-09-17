@@ -1,12 +1,20 @@
-# Job must match ALL of these (AND)
+# Optional: enforce AND logic here (leave empty to skip)
 must_have_all:
-  - "(new[ -]?grad(uate)?|university grad(uate)?|college grad(uate)?|new college grad|early career|entry[- ]?level|university hire)"
   - "(software|swe|engineer|developer)"
 
-# Optional extra OR patterns (any one can match). You can leave this empty.
-include_titles: []
+# OR logic (any of these helps match; can be empty)
+include_titles:
+  - "(full[- ]?stack)"
+  - "backend"
+  - "front[- ]?end"
+  - "platform"
+  - "machine learning"
+  - "ml engineer"
+  - "ai engineer"
+  - "infrastructure"
+  - "distributed"
 
-# Titles that should be dropped even if they match the above (OR)
+# Exclude these (OR)
 exclude_titles:
   - "internship"
   - "intern"
@@ -14,7 +22,7 @@ exclude_titles:
   - "co-op"
   - "unpaid"
 
-# Keep US-only
+# U.S.-only hints (OR)
 locations_any_of:
   - "United States"
   - "US"

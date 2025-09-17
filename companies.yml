@@ -1,22 +1,18 @@
+# Greenhouse boards that are stable
 greenhouse:
   - stripe
-  - shopify
   - databricks
-  - notion
   - datadog
-  - snowflake
   - figma
   - roblox
+  - snowflakeinc   # ✅ correct slug for Snowflake
 
+# Lever boards that still expose the public API
 lever:
-  - rippling
-  - ramp
-  - brex
   - plaid
-  - scaleai
 
-workday_cxs:
-  - microsoft
-  - nvidia
+# Disable Workday tenants that failed validation for now
+workday_cxs: []
 
+# Amazon has a stable JSON API
 amazon: true

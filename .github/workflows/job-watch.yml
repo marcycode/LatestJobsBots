@@ -2,8 +2,8 @@ name: Job Watch
 
 on:
   schedule:
-    - cron: "*/10 * * * *"   # every 10 min
-  workflow_dispatch: {}       # lets you run it manually
+    - cron: "*/10 * * * *"   # every 30 minutes
+  workflow_dispatch: {}       # allow manual runs
 
 permissions:
   contents: write             # needed to push seen.json updates
@@ -44,3 +44,5 @@ jobs:
             git commit -m "chore: update seen.json [skip ci]"
             git push
           else
+            echo "No changes to commit."
+          fi

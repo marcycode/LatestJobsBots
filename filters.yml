@@ -1,25 +1,20 @@
-include_titles:
-  - software
-  - (full[- ]?stack)
-  - backend
-  - front[- ]?end
-  - platform
-  - machine learning
-  - ml engineer
-  - ai engineer
-  - infrastructure
-  - distributed
+# Job must match ALL of these (AND)
+must_have_all:
+  - "(new[ -]?grad(uate)?|university grad(uate)?|college grad(uate)?|new college grad|early career|entry[- ]?level|university hire)"
+  - "(software|swe|engineer|developer)"
 
+# Optional extra OR patterns (any one can match). You can leave this empty.
+include_titles: []
+
+# Titles that should be dropped even if they match the above (OR)
 exclude_titles:
-  - internship
-  - intern
-  - coop
-  - co-op
-  - university
-  - campus
-  - new grad
-  - graduate program
+  - "internship"
+  - "intern"
+  - "coop"
+  - "co-op"
+  - "unpaid"
 
+# Keep US-only
 locations_any_of:
   - "United States"
   - "US"

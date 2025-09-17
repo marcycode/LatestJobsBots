@@ -168,15 +168,25 @@ def fetch_amazon(max_pages=3):
             break
     return jobs
 
-def title_matches(title, include_patterns, exclude_patterns):
+def title_matches(title, include_any, exclude_any, must_all=None):
     t = title.lower()
-    for p in exclude_patterns:
+    # Exclusions first
+    for p in exclude_any or []:
         if re.search(p, t, flags=re.I):
             return False
-    for p in include_patterns:
-        if re.search(p, t, flags=re.I):
-            return True
-    return False
+    # Must-have ALL (AND)
+    if must_all:
+        for p in must_all:
+            if not re.search(p, t, flags=re.I):
+                return False
+    # Then include-any (OR) if provided; if not provided, it's fine
+    if include_any:
+        for p in include_any:
+            if re.search(p, t, flags=re.I):
+                return True
+        return False
+    return True
+
 
 def location_matches(locations, allowed):
     if not allowed:
@@ -224,7 +234,7 @@ def main():
     # Workday CXS (Microsoft, NVIDIA, etc.)
     for tenant in companies.get("workday_cxs", []):
         try:
-            all_jobs.extend(fetch_workday_cxs(tenant))
+            all_jobs.extend(fetch_workday_cxs(tenant,query="new grad software engineer", limit=100))
         except Exception as e:
             print(f"[WARN] Workday {tenant}: {e}", file=sys.stderr)
 

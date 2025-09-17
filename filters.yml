@@ -1,0 +1,29 @@
+include_titles:
+  - software
+  - (full[- ]?stack)
+  - backend
+  - front[- ]?end
+  - platform
+  - machine learning
+  - ml engineer
+  - ai engineer
+  - infrastructure
+  - distributed
+
+exclude_titles:
+  - internship
+  - intern
+  - coop
+  - co-op
+  - university
+  - campus
+  - new grad
+  - graduate program
+
+locations_any_of:
+  - "United States"
+  - "US"
+  - "USA"
+  - "U.S."
+  - "Remote - US"
+  - "Remote, United States"

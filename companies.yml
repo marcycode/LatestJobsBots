@@ -1,0 +1,22 @@
+greenhouse:
+  - stripe
+  - shopify
+  - databricks
+  - notion
+  - datadog
+  - snowflake
+  - figma
+  - roblox
+
+lever:
+  - rippling
+  - ramp
+  - brex
+  - plaid
+  - scaleai
+
+workday_cxs:
+  - microsoft
+  - nvidia
+
+amazon: true
